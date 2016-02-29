@@ -1,0 +1,40 @@
+{
+    "name": "phptransformers/dwoo",
+    "description": "Dwoo implementation of PhpTransformer",
+    "keywords": ["Dwoo", "PhpTransformer", "PhpTransformers", "Template Engine", "Templates"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MacFJA",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "phptransformers/phptransformer": "~1.0.0",
+        "dwoo/dwoo": "dev-beta"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.6",
+        "squizlabs/php_codesniffer": "~2.3",
+        "phpmd/phpmd": "^2.3",
+        "sebastian/phpcpd": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpTransformers\\Dwoo\\": "lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhpTransformers\\Dwoo\\Test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "phpcs",
+            "phpmd lib/ text cleancode,codesize,controversial,design,naming,unusedcode",
+            "phpcpd lib/",
+            "phpunit --colors=always --coverage-text --coverage-clover=coverage.clover"
+        ]
+    }
+}
