@@ -56,7 +56,8 @@ class DwooTransformer implements TransformerInterface
             $this->dwoo->setCompileDir($options['compile-dir']);
         }
 
-        $this->dwoo->setTemplateDir(null);
+        $this->dwoo->setTemplateDir(getcwd());// Current working directory
+        $this->dwoo->setTemplateDir(null);// File System root
         if (array_key_exists('template-dir', $options)) {
             $this->dwoo->setTemplateDir($options['template-dir']);
         }

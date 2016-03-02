@@ -54,4 +54,25 @@ class DwooTransformerTest extends \PHPUnit_Framework_TestCase
 
         self::assertEquals('Hello, Linus!', $actual);
     }
+
+    /**
+     * @dataProvider dataProvider
+     * @param string $path
+     */
+    public function testTemplatePaths($path)
+    {
+        $engine = new DwooTransformer();
+
+        $actual = $engine->renderFile($path, array('name' => 'Linus'));
+
+        self::assertEquals('Hello, Linus!', $actual);
+    }
+
+    public function dataProvider()
+    {
+        return array(
+            array('tests/Fixtures/template.tpl'),
+            array(__DIR__.'/Fixtures/template.tpl'),
+        );
+    }
 }
