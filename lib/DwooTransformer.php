@@ -4,7 +4,6 @@ namespace PhpTransformers\Dwoo;
 
 use Dwoo\Core;
 use Dwoo\Exception;
-use Dwoo\Exception\CoreException;
 use Dwoo\Template\Str;
 use PhpTransformers\PhpTransformer\TransformerInterface;
 
@@ -35,7 +34,7 @@ class DwooTransformer implements TransformerInterface
      *
      * @param array $options The DwooTransformer options
      *
-     * @throws CoreException
+     * @throws Exception
      */
     public function __construct(array $options = array())
     {
@@ -61,7 +60,6 @@ class DwooTransformer implements TransformerInterface
         if (array_key_exists('template-dir', $options)) {
             $this->dwoo->setTemplateDir($options['template-dir']);
         }
-
     }
 
     /**
@@ -81,7 +79,6 @@ class DwooTransformer implements TransformerInterface
      * @param array $locals The variable to use in template
      * @return null|string
      *
-     * @throws CoreException
      * @throws Exception
      * @throws \Exception
      */
@@ -97,7 +94,6 @@ class DwooTransformer implements TransformerInterface
      * @param array $locals The variable to use in template
      * @return null|string
      *
-     * @throws CoreException
      * @throws Exception
      * @throws \Exception
      */
